@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Janis</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="nav-bar">
+      <h1>just another intelligent system</h1>
+      <box-icon class="open-menu" name="menu-alt-right"></box-icon>
+    </div>
+
+    <div class="section1">
+      <div class="discover-more">
+        <span>discover more</span>
+        <box-icon class="arrow-right" name="right-arrow-alt"></box-icon>
+      </div>
+
+      <div class="img-container">
+        <img class="janis" src="jane.png" alt="" />
+      </div>
+
+      <div class="txt-container">
+        <h1>
+          Hello,
+          <h2>
+            I'm
+            <h3>Janis</h3>
+          </h2>
+        </h1>
+
+        <p>
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Nostrum
+          deleniti delectus ipsa tenetur quia vitae aspernatur quo nulla neque
+          exercitationem.
+        </p>
+
+        <div class="button">
+          <span>Begin</span>
+          <box-icon class="arrow-right" name="right-arrow-alt"></box-icon>
+        </div>
+      </div>
+    </div>
+
+    <div class="blind">
+      <h1>
+        welcome
+        <i>please wait while we get things ready</i>
+        <img src="../Images/project-loader.gif" alt="" />
+      </h1>
+    </div>
+
+    <div class="nav-menu left">
+      <box-icon class="close-menu" name="x"></box-icon>
+
+      <div class="menu-steps" style="--i: 0">home</div>
+      <div class="menu-steps" style="--i: 1">services</div>
+      <div class="menu-steps" style="--i: 2">routines</div>
+      <div class="menu-steps" style="--i: 3">contact</div>
+      <div class="menu-steps" style="--i: 4">managements</div>
+    </div>
+
+    <div class="nav-menu top">
+      <box-icon class="close-menu" name="x"></box-icon>
+
+      <h1>JANIS</h1>
+
+      <p>
+        Lorem ipsum dolor, sit amet consectetur adipisicing elit. Maxime, nobis,
+        eaque cum eum eligendi quae nihil provident repudiandae eveniet
+        perspiciatis consequatur beatae error repellendus ducimus quia modi
+        magnam amet laboriosam.
+      </p>
+      <button>
+        <p>learn more</p>
+        <box-icon class="right-arrow" name="right-arrow-alt"></box-icon>
+      </button>
+    </div>
+
+    <div class="nav-menu right">
+      <box-icon class="close-menu" name="x"></box-icon>
+
+      <h1>FEATURES</h1>
+
+      <p>
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Fuga mollitia
+        voluptatem voluptas sunt ipsam repellat nobis doloremque tempore
+        officia, fugiat minus impedit consectetur a? Fugiat.
+      </p>
+      <button>
+        <p>read more</p>
+        <box-icon class="right-arrow" name="right-arrow-alt"></box-icon>
+      </button>
+    </div>
+
+    <script src="https://unpkg.com/boxicons@2.1.1/dist/boxicons.js"></script>
+
+    <script>
+      const btn = document.querySelector(".button");
+
+      const blind = document.querySelector(".blind");
+
+      const openMenu = document.querySelector(".open-menu");
+
+      const closeMenu = document.querySelectorAll(".close-menu");
+
+      const navMenu = document.querySelectorAll(".nav-menu");
+
+      const naveMenuList = document.querySelectorAll(".nav-menu .menu-steps");
+
+      btn.addEventListener("click", () => {
+        blind.classList.add("active");
+      });
+
+      openMenu.addEventListener("click", () => {
+        openMenu.classList.add("active");
+
+        navMenu.forEach((nav) => {
+          nav.classList.add("active");
+        });
+
+        naveMenuList.forEach((list) => {
+          list.classList.add("active");
+        });
+      });
+
+      closeMenu.forEach((close) => {
+        close.addEventListener("click", () => {
+          close.classList.remove("active");
+
+          openMenu.classList.remove("active");
+
+          navMenu.forEach((nav) => {
+            nav.classList.remove("active");
+          });
+
+          naveMenuList.forEach((list) => {
+            list.classList.remove("active");
+          });
+        });
+      });
+    </script>
+  </body>
+</html>
